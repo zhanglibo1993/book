@@ -1,0 +1,19 @@
+Activiy是Android的四大组件之一，主要承担着和用户交互。Activity更像是一个容器，承载着和用户的交互，所有我们看到的UI都是绘制在Antivity上。
+下图是activity的生命周期
+![avatar](pic/activity_lifecycle.png)
+在Manifest文件中，配置了android.intent.action.MAIN和android.intent.category.LAUNCHER的就是应用程序入口Activity。应用程序在启动后就会首先启动这个activity。activity在被启动时会有四种启动模式。启动模式可以在Manifest文件中activity标签下launchMode属性中配置。
+1.standard
+标准模式，在未配置时系统默认是标准模式。activity被启动一次就是一个实例，如果被多次启动我们就会看到存在多个相同的activity。
+2.single top
+如果一个activity之前被启动了，并且此时正activity的栈中处于栈顶的位置有它的实例,那么此时启动这个activity就会复用这个实例，而不会重新创建。
+3.single task
+如果一个activity之前的任务栈中存在它的实例，启动它的时候不会去创建新的，直接复用之前的实例。如果不存在，就会创建新的实例
+4.single instance
+如果一个activity配置了该启动模式，那么该activity独占一个任务栈，如果在任务栈中有它的实例便不会创建新的，复用之前的，相反，则会创建新的实例。
+
+
+
+
+
+
+
